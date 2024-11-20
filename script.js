@@ -1,5 +1,5 @@
-function calculateTotal() {
-    
+function calculateTotal(event) {
+    event.preventDefault()
     const quantity = parseInt(document.getElementById('quantity').value);
     const productPrice = parseFloat(document.getElementById('product').value);
 
@@ -12,4 +12,9 @@ function calculateTotal() {
     } else {
         alert("Пожалуйста, выберите положительное количество товаров.");
     }
+    
 }
+window.addEventListener('DOMContentLoaded', function () {
+	let click_but = document.getElementById('button')
+	click_but.addEventListener('click', calculateTotal)
+})
